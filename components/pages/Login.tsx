@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function Login() {
   return (
@@ -23,7 +24,11 @@ export default function Login() {
             Enter your email below to login to your account
           </CardDescription>
           <CardAction>
-            <Button variant="link" className="cursor-pointer">Sign Up</Button>
+            <Link href="/signup">
+              <Button variant="link" className="cursor-pointer">
+                Sign Up
+              </Button>
+            </Link>
           </CardAction>
         </CardHeader>
         <CardContent>

@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function Signup() {
   return (
@@ -19,11 +20,13 @@ export default function Signup() {
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle>Register</CardTitle>
-          <CardDescription>
-            Register new account
-          </CardDescription>
+          <CardDescription>Register new account</CardDescription>
           <CardAction>
-            <Button variant="link" className="cursor-pointer">Login</Button>
+            <Link href="/login">
+              <Button variant="link" className="cursor-pointer">
+                Login
+              </Button>
+            </Link>
           </CardAction>
         </CardHeader>
         <CardContent>
