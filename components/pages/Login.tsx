@@ -13,8 +13,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { login } from "@/utils/supabase/auth";
+import { useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   return (
     <div className="w-screen h-screen flex items-center justify-center">
       <Card className="w-full max-w-sm">
@@ -40,6 +44,7 @@ export default function Login() {
                   id="email"
                   type="email"
                   placeholder="m@example.com"
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -53,13 +58,22 @@ export default function Login() {
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
               </div>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex-col gap-2">
-          <Button type="submit" className="w-full">
+          <Button
+            type="submit"
+            className="w-full"
+            onClick={() => login({ email, password })}
+          >
             Login
           </Button>
           <Button variant="outline" className="w-full">
