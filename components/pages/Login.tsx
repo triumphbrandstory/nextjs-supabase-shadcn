@@ -28,7 +28,7 @@ export default function Login() {
             Enter your email below to login to your account
           </CardDescription>
           <CardAction>
-            <Link href="/signup">
+            <Link href="/register">
               <Button variant="link" className="cursor-pointer">
                 Sign Up
               </Button>
